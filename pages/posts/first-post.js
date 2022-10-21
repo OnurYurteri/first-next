@@ -2,8 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { AnalyticsBrowser } from '@segment/analytics-next'
-
+import Layout from '../../components/layout'
 
 const YourComponent = () => (
   <Image
@@ -15,8 +14,6 @@ const YourComponent = () => (
 )
 
 export default function FirstPost() {
-  const analytics = AnalyticsBrowser.load({ writeKey: 'AWMBqiU0iLuFhbXDL4Ba3POuJOyzQlkg' })
-  // analytics.identify('hello world')
 
   return (
     <>
