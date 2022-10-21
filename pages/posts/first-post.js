@@ -1,5 +1,9 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image';
+
+import { AnalyticsBrowser } from '@segment/analytics-next'
+
 
 const YourComponent = () => (
     <Image
@@ -11,8 +15,14 @@ const YourComponent = () => (
 );
 
 export default function FirstPost() {
+  const analytics = AnalyticsBrowser.load({ writeKey: 'AWMBqiU0iLuFhbXDL4Ba3POuJOyzQlkg' })
+  // analytics.identify('hello world')
+
   return (
     <>
+      <Head>
+        <title>First Post</title>
+      </Head>
       <h1>First Post</h1>
       <YourComponent />
       <h2>
