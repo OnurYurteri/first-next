@@ -13,19 +13,23 @@ const YourComponent = () => (
   />
 )
 
-export default function FirstPost() {
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      test: 123,
+    },
+  }
+}
 
+export default function FirstPost({ test }) {
   return (
     <>
       <Layout>
         <Head>
           <title>First Post</title>
         </Head>
-        <h1>First Post</h1>
+        <h1>First Post, {test}</h1>
         <YourComponent />
-        <h2>
-          <Link href="/">Go back⏪</Link>
-        </h2>
       </Layout>
     </>
   )
